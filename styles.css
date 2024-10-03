@@ -1,7 +1,7 @@
 .section1 {
     background-color: rgb(245, 240, 230);
     padding: 10px;
-    /* margin: 0; */
+    margin: 0;
     display: inline-block;
 }
 
@@ -23,10 +23,7 @@
 
 .webbody {
     /* remove the right space */
-    margin-top: 10px;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 10px 0 0 0;
     font-family: Times New Roman;
     font-size: 28px;
 }
@@ -39,6 +36,7 @@
     position: sticky;
     background-color: white;
     top: 0;
+    width: 100%;
 }
 
 #navbar ul {
@@ -75,6 +73,12 @@ h3 {
     scroll-margin-top: 140px; /* base on the navbar height(60px+80px) */
 }
 
+/* this ensure that the image will change with the screen size */
+.responsive-logo, .responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -87,4 +91,33 @@ h3 {
     color: white;
     padding: 10px;
     overflow: scroll;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 800px) {
+
+    #navbar2 {
+        /* hide navbar */
+        display: none; 
+    }
+
+    .responsive-logo {
+        margin-top: 10px;
+        max-width: 75%;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 20px;
+    }
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
